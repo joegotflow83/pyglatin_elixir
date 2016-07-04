@@ -2,7 +2,7 @@ defmodule Pyglatin do
   # A function for performing pyglatin
   def get_word do
     # Grab word to transform
-    IO.gets "Enter a word "
+    IO.gets "Enter a word[s] "
   end
 
   def vowel(word) do
@@ -35,6 +35,12 @@ defmodule Pyglatin do
         consonant word
     end
   end
+
+  def multiple_conversion do
+    words = get_word
+    list_words = String.to_charlist words
+    Enum.map list_words, single_conversion
+  end
 end
 
-Pyglatin.single_conversion
+Pyglatin.multiple_conversion
